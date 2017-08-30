@@ -91,15 +91,15 @@ return
 #ifwinactive
 
 
-Callback(picid, escaped=False) {
+callback(picid, escaped=False) {
 	global picsfolder, sourcefile, irfanview
 	
+	LVS_Hide()
+	
 	if (escaped || picid == "")
-		return LVS_Hide()
+		return
 
 	opendestfileinirfanview := GetKeyState("Shift") ? True : False ; get this info early, file copying can take some time
-	
-	LVS_Hide()
 	
 	SplitPath, sourcefile,,, fileextension
 	
